@@ -5,6 +5,10 @@ const app = document.querySelector(".container");
 startBtn.addEventListener("click", () => {
   startScreen.classList.add("hidden");
   app.classList.remove("hidden");
+
+  canvas.width= canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  setCanvasBackground();
 });
 
 const canvas = document.querySelector("canvas"),
@@ -142,4 +146,5 @@ clearCanvas.addEventListener("click", () =>{
  )
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", (startDraw)=> isDrawing =false);
+canvas.addEventListener("mouseup", ()=> isDrawing =false);
+canvas.addEventListener("mouseleave", () => isDrawing = false);
